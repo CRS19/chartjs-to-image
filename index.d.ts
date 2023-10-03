@@ -1,5 +1,9 @@
 declare class ChartJsImage {
-  constructor(apiKey?: string, accountId?: string);
+  constructor( 
+    options: {width: number, height: number, backgroundColor?: string}, 
+    apiKey?: string, 
+    accountId?: string
+  );
 
   setConfig(chartConfig: object): this;
   setWidth(width: number | string): this;

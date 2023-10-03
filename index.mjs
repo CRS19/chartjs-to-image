@@ -2,7 +2,7 @@ import axios from 'axios';
 import { stringify } from 'javascript-stringify';
 
 class ChartJsImage {
-  constructor(apiKey, accountId) {
+  constructor(options, apiKey, accountId) {
     this.apiKey = apiKey;
     this.accountId = accountId;
 
@@ -11,12 +11,12 @@ class ChartJsImage {
     this.baseUrl = `${this.protocol}://${this.host}`;
 
     this.chart = undefined;
-    this.width = 500;
-    this.height = 300;
+    this.width = options.width || 500;
+    this.height = options.height || 300;
     this.devicePixelRatio = 1.0;
-    this.backgroundColor = '#ffffff';
+    this.backgroundColor = options.backgroundColor || 'white';
     this.format = 'png';
-    this.version = '2';
+    this.version = '4';
   }
 
   setConfig(chartConfig) {

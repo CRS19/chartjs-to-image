@@ -1,7 +1,5 @@
-const fs = require('fs');
-
-const axios = require('axios');
-const { stringify } = require('javascript-stringify');
+import axios from 'axios';
+import { stringify } from 'javascript-stringify';
 
 class ChartJsImage {
   constructor(apiKey, accountId) {
@@ -143,10 +141,6 @@ class ChartJsImage {
     return `data:image/png;base64,${b64buf}`;
   }
 
-  async toFile(pathOrDescriptor) {
-    const buf = await this.toBinary();
-    fs.writeFileSync(pathOrDescriptor, buf);
-  }
 }
 
-module.exports = ChartJsImage;
+export default ChartJsImage;

@@ -22,7 +22,6 @@ declare class ChartJsImage {
   getShortUrl(): Promise<string>;
   toBinary(): Promise<Buffer>;
   toDataUrl(): Promise<string>;
-  toFile(pathOrDescriptor: string): Promise<void>;
 }
 
 export = ChartJsImage;
